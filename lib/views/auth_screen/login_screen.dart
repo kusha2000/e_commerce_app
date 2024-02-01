@@ -1,10 +1,13 @@
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/consts/lists.dart';
+import 'package:e_commerce_app/views/auth_screen/signup_screen.dart';
 import 'package:e_commerce_app/widgets_common/applogo_widget.dart';
 import 'package:e_commerce_app/widgets_common/bg_widget.dart';
 import 'package:e_commerce_app/widgets_common/custom_textfield.dart';
 import 'package:e_commerce_app/widgets_common/our_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -43,13 +46,12 @@ class LoginScreen extends StatelessWidget {
                 createNewAccount.text.color(fontGrey).make(),
                 5.heightBox,
                 ourButton(
-                        color: lightGolden,
-                        title: signup,
-                        textColor: redColor,
-                        onPress: () {})
-                    .box
-                    .width(context.screenWidth - 50)
-                    .make(),
+                    color: lightGolden,
+                    title: signup,
+                    textColor: redColor,
+                    onPress: () {
+                      Get.to(() => const SignupScreen());
+                    }).box.width(context.screenWidth - 50).make(),
 
                 10.heightBox,
                 loginwith.text.color(fontGrey).make(),
