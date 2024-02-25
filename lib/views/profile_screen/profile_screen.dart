@@ -43,7 +43,8 @@ class ProfileScreen extends StatelessWidget {
                             ),
                           ).onTap(() {
                             controller.nameController.text = data['name'];
-                            controller.passController.text = data['password'];
+                            controller.newpassController.text =
+                                data['password'];
                             Get.to(() => EditProfileScreen(data: data));
                           }),
                         ),
@@ -51,21 +52,19 @@ class ProfileScreen extends StatelessWidget {
                         //user details section
                         Row(
                           children: [
-
-                            data['imageUrl']=='' 
-
-                            ? Image.asset(imgProfile2,
-                                    width: 80, fit: BoxFit.cover)
-                                .box
-                                .roundedFull
-                                .clip(Clip.antiAlias)
-                                .make()
-                            : Image.network(data['imageUrl'],
-                                    width: 80, fit: BoxFit.cover)
-                                .box
-                                .roundedFull
-                                .clip(Clip.antiAlias)
-                                .make(),
+                            data['imageUrl'] == ''
+                                ? Image.asset(imgProfile2,
+                                        width: 80, fit: BoxFit.cover)
+                                    .box
+                                    .roundedFull
+                                    .clip(Clip.antiAlias)
+                                    .make()
+                                : Image.network(data['imageUrl'],
+                                        width: 80, fit: BoxFit.cover)
+                                    .box
+                                    .roundedFull
+                                    .clip(Clip.antiAlias)
+                                    .make(),
                             10.widthBox,
                             Expanded(
                                 child: Column(
