@@ -1,8 +1,6 @@
-import 'package:e_commerce_app/consts/colors.dart';
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/consts/lists.dart';
 import 'package:e_commerce_app/widgets_common/our_button.dart';
-import 'package:flutter/material.dart';
 
 class ItemDetails extends StatelessWidget {
   final String? title;
@@ -33,7 +31,7 @@ class ItemDetails extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -222,7 +220,7 @@ class ItemDetails extends StatelessWidget {
                         .size(16)
                         .color(darkFontGrey)
                         .make(),
-                    
+
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(

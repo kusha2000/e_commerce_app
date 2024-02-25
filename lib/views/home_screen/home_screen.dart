@@ -1,9 +1,7 @@
-import 'package:e_commerce_app/consts/colors.dart';
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/consts/lists.dart';
 import 'package:e_commerce_app/views/home_screen/components/featured_button.dart';
 import 'package:e_commerce_app/widgets_common/home_buttons.dart';
-import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -53,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                           )
                               .box
                               .clip(Clip.antiAlias)
-                              .margin(EdgeInsets.symmetric(horizontal: 8))
+                              .margin(const EdgeInsets.symmetric(horizontal: 8))
                               .rounded
                               .make(),
                         );
@@ -92,7 +90,7 @@ class HomeScreen extends StatelessWidget {
                           )
                               .box
                               .clip(Clip.antiAlias)
-                              .margin(EdgeInsets.symmetric(horizontal: 8))
+                              .margin(const EdgeInsets.symmetric(horizontal: 8))
                               .rounded
                               .make(),
                         );
@@ -229,7 +227,7 @@ class HomeScreen extends StatelessWidget {
                           )
                               .box
                               .clip(Clip.antiAlias)
-                              .margin(EdgeInsets.symmetric(horizontal: 8))
+                              .margin(const EdgeInsets.symmetric(horizontal: 8))
                               .rounded
                               .make(),
                         );
@@ -239,7 +237,7 @@ class HomeScreen extends StatelessWidget {
                     //all products section
                     20.heightBox,
                     GridView.builder(
-                        physics: NeverScrollableScrollPhysics(),
+                        physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                         itemCount: 6,
                         gridDelegate:

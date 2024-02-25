@@ -1,5 +1,4 @@
 import 'package:e_commerce_app/consts/consts.dart';
-import 'package:flutter/material.dart';
 
 Widget featuredButtton({String? title, icon}) {
   return Row(
@@ -15,7 +14,7 @@ Widget featuredButtton({String? title, icon}) {
   )
       .box
       .width(200)
-      .margin(EdgeInsets.symmetric(horizontal: 4))
+      .margin(const EdgeInsets.symmetric(horizontal: 4))
       .white
       .padding(const EdgeInsets.all(4))
       .roundedSM

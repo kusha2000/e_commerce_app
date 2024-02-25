@@ -1,5 +1,4 @@
 import 'package:e_commerce_app/consts/consts.dart';
-import 'package:flutter/widgets.dart';
 
 Widget applogoWidget() {
   //using velocity X here

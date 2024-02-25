@@ -4,7 +4,6 @@ import 'package:e_commerce_app/views/cart_screen/cart_screen.dart';
 import 'package:e_commerce_app/views/category_screen/category_screen.dart';
 import 'package:e_commerce_app/views/home_screen/home_screen.dart';
 import 'package:e_commerce_app/views/profile_screen/profile_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Home extends StatelessWidget {

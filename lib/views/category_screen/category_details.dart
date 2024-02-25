@@ -1,6 +1,5 @@
 import 'package:e_commerce_app/views/category_screen/item_details.dart';
 import 'package:e_commerce_app/widgets_common/bg_widget.dart';
-import 'package:flutter/material.dart';
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:get/get.dart';
 
@@ -17,7 +16,7 @@ class CategotyDetails extends StatelessWidget {
         title: title!.text.fontFamily(bold).white.make(),
       ),
       body: Container(
-        padding: EdgeInsets.all(12),
+        padding: const EdgeInsets.all(12),
         child: Column(
           children: [
             SingleChildScrollView(
@@ -36,7 +35,7 @@ class CategotyDetails extends StatelessWidget {
                       .white
                       .rounded
                       .size(120, 60)
-                      .margin(EdgeInsets.symmetric(horizontal: 4))
+                      .margin(const EdgeInsets.symmetric(horizontal: 4))
                       .make(),
                 ),
               ),
@@ -88,7 +87,7 @@ class CategotyDetails extends StatelessWidget {
                           .padding(const EdgeInsets.all(12))
                           .make()
                           .onTap(() {
-                        Get.to(() => ItemDetails(
+                        Get.to(() => const ItemDetails(
                               title: "Dummy Item",
                             ));
                       });

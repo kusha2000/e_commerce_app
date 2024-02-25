@@ -1,10 +1,9 @@
-import 'package:e_commerce_app/consts/colors.dart';
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/views/auth_screen/login_screen.dart';
+import 'package:e_commerce_app/views/home_screen/home.dart';
 import 'package:e_commerce_app/widgets_common/applogo_widget.dart';
-import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,7 +18,14 @@ class _SplashScreenState extends State<SplashScreen> {
   changeScreen() {
     Future.delayed(const Duration(seconds: 3), () {
       //using getX
-      Get.to(() => LoginScreen());
+      //Get.to(() => LoginScreen());
+      auth.authStateChanges().listen((User? user) {
+        if (user == null && mounted) {
+          Get.to(() => const LoginScreen());
+        } else {
+          Get.to(() => const Home());
+        }
+      });
     });
   }
 
@@ -45,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen> {
             appname.text.fontFamily(bold).size(22).white.make(),
             5.heightBox,
             appversion.text.white.make(),
-            Spacer(),
+            const Spacer(),
             credits.text.white.fontFamily(semibold).make(),
             30.heightBox,
             //our splash screen UI is completed...

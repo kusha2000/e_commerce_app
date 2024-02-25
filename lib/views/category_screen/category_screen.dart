@@ -2,7 +2,6 @@ import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/consts/lists.dart';
 import 'package:e_commerce_app/views/category_screen/category_details.dart';
 import 'package:e_commerce_app/widgets_common/bg_widget.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CategoryScreen extends StatelessWidget {
@@ -16,10 +15,10 @@ class CategoryScreen extends StatelessWidget {
           title: Categories.text.fontFamily(bold).white.make(),
         ),
         body: Container(
-          padding: EdgeInsets.all(12),
+          padding: const EdgeInsets.all(12),
           child: GridView.builder(
               itemCount: 9,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 mainAxisSpacing: 8,
                 crossAxisSpacing: 8,
