@@ -36,7 +36,15 @@ class ItemDetails extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                if (controller.isFav.value) {
+                  controller.removeFromWishlist(data.id);
+                  controller.isFav(false);
+                } else {
+                  controller.addToWishlist(data.id);
+                  controller.isFav(true);
+                }
+              },
               icon: const Icon(
                 Icons.favorite_outline,
               ),
@@ -119,7 +127,10 @@ class ItemDetails extends StatelessWidget {
                               color: darkFontGrey,
                             ),
                           ).onTap(() {
-                            Get.to(() => const ChatScreen());
+                            Get.to(() => const ChatScreen(), arguments: [
+                              data['p_seller'],
+                              data['vendor_id'],
+                            ]);
                           })
                         ],
                       )
