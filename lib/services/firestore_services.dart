@@ -42,7 +42,7 @@ class FirestoreServices {
   static getWishlists() {
     return firestore
         .collection(productsCollection)
-        .where('p_wishlist', isEqualTo: currentUser!.uid)
+        .where('p_wishlist', arrayContains: currentUser!.uid)
         .snapshots();
   }
 

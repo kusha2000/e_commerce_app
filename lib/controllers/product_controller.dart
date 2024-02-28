@@ -69,6 +69,7 @@ class ProductController extends GetxController {
   addToWishlist(docId, context) async {
     await firestore.collection(productsCollection).doc(docId).set({
       'p_wishlist': FieldValue.arrayUnion([currentUser!.uid])
+      // 'p_wishlist': currentUser!.uid
     }, SetOptions(merge: true));
     isFav(true);
     VxToast.show(context, msg: "Added to wishlist");
