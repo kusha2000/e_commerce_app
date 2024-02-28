@@ -29,4 +29,28 @@ class FirestoreServices {
   static deleteDocument(docId) {
     return firestore.collection(cartCollection).doc(docId).delete();
   }
+
+  //get orders
+  static getAllOrders() {
+    return firestore
+        .collection(orderCollection)
+        .where('order_by', isEqualTo: currentUser!.uid)
+        .snapshots();
+  }
+
+  //get wishlists
+  static getWishlists() {
+    return firestore
+        .collection(productsCollection)
+        .where('p_wishlist', isEqualTo: currentUser!.uid)
+        .snapshots();
+  }
+
+  //get messages
+  static getAllMessages() {
+    return firestore
+        .collection(chatsCollection)
+        .where('fromId', isEqualTo: currentUser!.uid)
+        .snapshots();
+  }
 }
