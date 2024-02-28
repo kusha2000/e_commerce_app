@@ -41,7 +41,8 @@ const searchanything = "Serach anything...",
     tShirts = "TShirts",
     girlsDress = "Girls Dresses",
     featuredProduct = "Featured Product",
-    featuredCategories = "FeaturedCategories";
+    featuredCategories = "FeaturedCategories",
+    allproduct = "All Products";
 
 //Category strings
 const womenClothing = "Women Clothing",

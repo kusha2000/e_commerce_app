@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/consts/firebase_const.dart';
 
 class FirestoreServices {
@@ -25,7 +26,7 @@ class FirestoreServices {
         .snapshots();
   }
 
-  //get cart
+  //delete cart items
   static deleteDocument(docId) {
     return firestore.collection(cartCollection).doc(docId).delete();
   }
@@ -52,5 +53,37 @@ class FirestoreServices {
         .collection(chatsCollection)
         .where('fromId', isEqualTo: currentUser!.uid)
         .snapshots();
+  }
+
+  //get Counts
+  static getCounts() async {
+    var res = await Future.wait([
+      firestore
+          .collection(cartCollection)
+          .where('added_by', isEqualTo: currentUser!.uid)
+          .get()
+          .then((value) {
+        return value.docs.length;
+      }),
+      firestore
+          .collection(productsCollection)
+          .where('p_wishlist', arrayContains: currentUser!.uid)
+          .get()
+          .then((value) {
+        return value.docs.length;
+      }),
+      firestore
+          .collection(orderCollection)
+          .where('order_by', isEqualTo: currentUser!.uid)
+          .get()
+          .then((value) {
+        return value.docs.length;
+      }),
+    ]);
+    return res;
+  }
+
+  static allproducts() {
+    return firestore.collection(productsCollection).snapshots();
   }
 }

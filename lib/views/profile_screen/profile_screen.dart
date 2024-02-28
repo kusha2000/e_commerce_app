@@ -11,6 +11,7 @@ import 'package:e_commerce_app/views/profile_screen/components/details_cart.dart
 import 'package:e_commerce_app/views/profile_screen/edit_profile.dart';
 import 'package:e_commerce_app/views/wishlist_screen/wishlist_screen.dart';
 import 'package:e_commerce_app/widgets_common/bg_widget.dart';
+import 'package:e_commerce_app/widgets_common/loading_indicator.dart';
 import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -19,6 +20,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = Get.put(ProfileController());
+    FirestoreServices.getCounts();
     return bgWidget(
       child: Scaffold(
           body: StreamBuilder(
@@ -98,23 +100,36 @@ class ProfileScreen extends StatelessWidget {
                           ],
                         ),
                         20.heightBox,
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            detailsCard(
-                                count: "${data['card_count']}",
-                                title: "in your cart",
-                                width: context.screenWidth / 3.5),
-                            detailsCard(
-                                count: "${data['wishlist_count']}",
-                                title: "in your wishlist",
-                                width: context.screenWidth / 3.5),
-                            detailsCard(
-                                count: "${data['order_count']}",
-                                title: "your orders",
-                                width: context.screenWidth / 3.5),
-                          ],
-                        ),
+                        FutureBuilder(
+                            future: FirestoreServices.getCounts(),
+                            builder:
+                                (BuildContext context, AsyncSnapshot snapshot) {
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: loadingIndicator(),
+                                );
+                              } else {
+                                var countdata = snapshot.data;
+                                return Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    detailsCard(
+                                        count: countdata[0].toString(),
+                                        title: "in your cart",
+                                        width: context.screenWidth / 3.5),
+                                    detailsCard(
+                                        count: countdata[1].toString(),
+                                        title: "in your wishlist",
+                                        width: context.screenWidth / 3.5),
+                                    detailsCard(
+                                        count: countdata[2].toString(),
+                                        title: "your orders",
+                                        width: context.screenWidth / 3.5),
+                                  ],
+                                );
+                              }
+                            }),
 
                         //button section
 
