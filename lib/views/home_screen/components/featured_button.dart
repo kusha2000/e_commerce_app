@@ -1,4 +1,6 @@
 import 'package:e_commerce_app/consts/consts.dart';
+import 'package:e_commerce_app/views/category_screen/category_details.dart';
+import 'package:get/get.dart';
 
 Widget featuredButtton({String? title, icon}) {
   return Row(
@@ -19,5 +21,8 @@ Widget featuredButtton({String? title, icon}) {
       .padding(const EdgeInsets.all(4))
       .roundedSM
       .outerShadowSm
-      .make();
+      .make()
+      .onTap(() {
+    Get.to(() => CategotyDetails(title: title));
+  });
 }
