@@ -12,7 +12,7 @@ import 'package:path/path.dart';
 class ProfileController extends GetxController {
   var profileImgPath = ''.obs;
 
-  var profileImageLink = '';
+  var profileImageLink = ''.obs;
 
   var isloading = false.obs;
 
@@ -33,12 +33,16 @@ class ProfileController extends GetxController {
   }
 
   uploadProfileImage() async {
-    var filename = basename(profileImgPath.value);
-    var destination = 'images/${currentUser!.uid}/$filename';
-    Reference ref = FirebaseStorage.instance.ref().child(destination);
-    await ref.putFile(File(profileImgPath.value));
-
-    profileImageLink = await ref.getDownloadURL();
+    try {
+      var filename = basename(profileImgPath.value);
+      var destination = 'images/${currentUser!.uid}/$filename';
+      Reference ref = FirebaseStorage.instance.ref().child(destination);
+      await ref.putFile(File(profileImgPath.value));
+      profileImageLink.value =
+          await ref.getDownloadURL(); // Update profileImageLink
+    } catch (e) {
+      print('Error uploading profile image: $e');
+    }
   }
 
   updateProfile({name, password, imgUrl}) async {

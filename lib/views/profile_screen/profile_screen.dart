@@ -59,13 +59,17 @@ class ProfileScreen extends StatelessWidget {
                           children: [
                             data['imageUrl'] == ''
                                 ? Image.asset(imgProfile2,
-                                        width: 80, fit: BoxFit.cover)
+                                        width: 80,
+                                        height: 80,
+                                        fit: BoxFit.cover)
                                     .box
                                     .roundedFull
                                     .clip(Clip.antiAlias)
                                     .make()
                                 : Image.network(data['imageUrl'],
-                                        width: 80, fit: BoxFit.cover)
+                                        width: 80,
+                                        height: 80,
+                                        fit: BoxFit.cover)
                                     .box
                                     .roundedFull
                                     .clip(Clip.antiAlias)

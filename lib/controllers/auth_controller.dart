@@ -25,33 +25,71 @@ class AuthController extends GetxController {
   }
 
   //signup method
-  Future<UserCredential?> signupMethod({email, password, context}) async {
-    UserCredential? userCredential;
+  // Future<UserCredential?> signupMethod({email, password, context}) async {
+  //   UserCredential? userCredential;
 
+  //   try {
+  //     await auth.createUserWithEmailAndPassword(
+  //         email: email, password: password);
+  //   } on FirebaseAuthException catch (e) {
+  //     VxToast.show(context, msg: e.toString());
+  //   }
+
+  //   return userCredential;
+  // }
+
+  // //storing data method
+  // storeUserData({name, password, email}) async {
+  //   DocumentReference store =
+  //       firestore.collection(usersCollection).doc(currentUser!.uid);
+  //   store.set({
+  //     'name': name,
+  //     'password': password,
+  //     'email': email,
+  //     'imageUrl': '',
+  //     'id': currentUser!.uid,
+  //     'cart_count': "00",
+  //     'wishlist_count': "00",
+  //     'order_count': "00",
+  //   });
+  // }
+
+  //signup method
+  Future<UserCredential?> signupMethod({email, password, context}) async {
     try {
-      await auth.createUserWithEmailAndPassword(
-          email: email, password: password);
+      UserCredential userCredential = await auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return userCredential;
     } on FirebaseAuthException catch (e) {
       VxToast.show(context, msg: e.toString());
+      return null; // Return null if there's an error
     }
-
-    return userCredential;
   }
 
-  //storing data method
+//storing data method
   storeUserData({name, password, email}) async {
-    DocumentReference store =
-        firestore.collection(usersCollection).doc(currentUser!.uid);
-    store.set({
-      'name': name,
-      'password': password,
-      'email': email,
-      'imageUrl': '',
-      'id': currentUser!.uid,
-      'cart_count': "00",
-      'wishlist_count': "00",
-      'order_count': "00",
-    });
+    // Wait for the signup process to complete and get the user's UID
+    await Future.delayed(Duration(
+        seconds: 1)); // Add a small delay for the user ID to be available
+    User? user = auth.currentUser;
+    if (user != null) {
+      DocumentReference store =
+          firestore.collection(usersCollection).doc(user.uid);
+      store.set({
+        'name': name,
+        'password': password,
+        'email': email,
+        'imageUrl': '',
+        'id': user.uid, // Use the same UID as the authentication user ID
+        'cart_count': "00",
+        'wishlist_count': "00",
+        'order_count': "00",
+      });
+    } else {
+      print('User is null. Unable to store user data.');
+    }
   }
 
   //signout method

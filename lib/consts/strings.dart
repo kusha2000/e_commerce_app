@@ -18,6 +18,7 @@ const termAndCond = "Term and Condition";
 const alreadyHaveAccount = "Already have an account?";
 const logout = "Log Out";
 const loggedin = "Logged in successfully";
+const signsucess = "Creted Account successfully";
 const loggedout = "Logged out successfully";
 
 //home strings

@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/controllers/auth_controller.dart';
-import 'package:e_commerce_app/views/home_screen/home.dart';
+import 'package:e_commerce_app/views/auth_screen/login_screen.dart';
 import 'package:e_commerce_app/widgets_common/applogo_widget.dart';
 import 'package:e_commerce_app/widgets_common/bg_widget.dart';
 import 'package:e_commerce_app/widgets_common/custom_textfield.dart';
@@ -140,8 +140,8 @@ class _SignupScreenState extends State<SignupScreen> {
                                         name: nameController.text);
                                   },
                                 ).then((value) {
-                                  VxToast.show(context, msg: loggedin);
-                                  Get.offAll(() => const Home());
+                                  VxToast.show(context, msg: signsucess);
+                                  Get.offAll(() => const LoginScreen());
                                 });
                               } catch (e) {
                                 auth.signOut();
