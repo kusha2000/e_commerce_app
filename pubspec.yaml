@@ -70,6 +70,7 @@ flutter:
     - assets/
     - assets/images/
     - assets/icons/
+    - assets/icons/admin/
     - lib/services/category_model.json
 
 

@@ -1,0 +1,10 @@
+const appname = "eShop Admin",
+    login = "Login",
+    welcome = "Hi, Welcome to",
+    email = "Email",
+    password = "Password",
+    forgotPassword = "Forgot Password",
+    anyProblem = "In case of any dificulty, contact adminisration",
+    emailHint = "eg.####@eshop.com",
+    passwordHint = "*******",
+    credit = "@Kushan";

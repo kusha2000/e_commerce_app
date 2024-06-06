@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/admin/views/auth_screen/login_screen_admin.dart';
 import 'package:e_commerce_app/consts/consts.dart';
 import 'package:e_commerce_app/consts/lists.dart';
 import 'package:e_commerce_app/controllers/auth_controller.dart';
@@ -98,6 +99,13 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  ourButton(
+                      color: darkFontGrey,
+                      title: admin,
+                      textColor: whiteColor,
+                      onPress: () {
+                        Get.to(() => const LoginScreenAdmin());
+                      }).box.width(context.screenWidth - 50).make(),
                 ],
               )
                   .box

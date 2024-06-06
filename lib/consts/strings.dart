@@ -20,7 +20,7 @@ const logout = "Log Out";
 const loggedin = "Logged in successfully";
 const signsucess = "Creted Account successfully";
 const loggedout = "Logged out successfully";
-
+const admin = "Admin";
 //home strings
 const home = "Home",
     Categories = "Categories",
