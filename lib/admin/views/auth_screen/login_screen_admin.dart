@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/admin/const/const.dart';
+import 'package:e_commerce_app/admin/views/home_screen/admin_home.dart';
 import 'package:e_commerce_app/admin/views/widgets/normal_text.dart';
 import 'package:e_commerce_app/widgets_common/our_button.dart';
+import 'package:get/get.dart';
 
 class LoginScreenAdmin extends StatelessWidget {
   const LoginScreenAdmin({super.key});
@@ -8,6 +10,7 @@ class LoginScreenAdmin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: purpleColor,
       body: SafeArea(
         child: Padding(
@@ -34,10 +37,14 @@ class LoginScreenAdmin extends StatelessWidget {
                 ],
               ),
               40.heightBox,
+              normalText(text: loginTo, size: 18.0, color: lightGrey),
+              10.heightBox,
               Column(
                 children: [
                   TextFormField(
                     decoration: const InputDecoration(
+                        filled: true,
+                        fillColor: textfieldGrey,
                         prefixIcon: Icon(
                           Icons.email,
                           color: purpleColor,
@@ -47,6 +54,8 @@ class LoginScreenAdmin extends StatelessWidget {
                   ),
                   TextFormField(
                     decoration: const InputDecoration(
+                        filled: true,
+                        fillColor: textfieldGrey,
                         prefixIcon: Icon(
                           Icons.lock,
                           color: purpleColor,
@@ -58,7 +67,11 @@ class LoginScreenAdmin extends StatelessWidget {
                   30.heightBox,
                   SizedBox(
                     width: context.screenWidth - 100,
-                    child: ourButton(title: login, onPress: () {}),
+                    child: ourButton(
+                        title: login,
+                        onPress: () {
+                          Get.to(() => const AdminHome());
+                        }),
                   )
                 ],
               )
