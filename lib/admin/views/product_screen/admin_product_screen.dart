@@ -1,6 +1,9 @@
 import 'package:e_commerce_app/admin/const/const.dart';
+import 'package:e_commerce_app/admin/views/product_screen/admin_add_product.dart';
+import 'package:e_commerce_app/admin/views/product_screen/admin_product_details.dart';
 import 'package:e_commerce_app/admin/views/widgets/appbar_widget.dart';
 import 'package:e_commerce_app/admin/views/widgets/normal_text.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart' as intl;
 
 class AdminProductScreen extends StatelessWidget {
@@ -11,7 +14,9 @@ class AdminProductScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: purpleColor,
-        onPressed: () {},
+        onPressed: () {
+          Get.to(() => const AdminAddProduct());
+        },
         child: const Icon(Icons.add),
       ),
       backgroundColor: Colors.white,
@@ -24,7 +29,9 @@ class AdminProductScreen extends StatelessWidget {
             children: List.generate(
                 20,
                 (index) => ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(() => AdminProductDetails());
+                      },
                       leading: Image.asset(
                         imgProduct,
                         width: 100,
@@ -32,7 +39,13 @@ class AdminProductScreen extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                       title: boldText(text: "Product title", color: fontGrey),
-                      subtitle: normalText(text: "Rs.4000.0", color: lightGrey),
+                      subtitle: Row(
+                        children: [
+                          normalText(text: "Rs.4000.0", color: fontGrey),
+                          10.heightBox,
+                          boldText(text: "Featured", color: greenColor)
+                        ],
+                      ),
                       trailing: VxPopupMenu(
                         arrowSize: 0.0,
                         menuBuilder: () => Column(

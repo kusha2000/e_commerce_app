@@ -1,8 +1,9 @@
 import 'package:e_commerce_app/admin/const/const.dart';
 import 'package:e_commerce_app/admin/views/widgets/normal_text.dart';
 
-Widget customtextField({label, hint, controller}) {
+Widget customtextField({label, hint, controller, isDesc = false}) {
   return TextFormField(
+    maxLines: isDesc ? 4 : 1,
     decoration: InputDecoration(
         isDense: true,
         label: normalText(text: label),

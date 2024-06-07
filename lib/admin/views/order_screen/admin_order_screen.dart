@@ -1,6 +1,8 @@
 import 'package:e_commerce_app/admin/const/const.dart';
+import 'package:e_commerce_app/admin/views/order_screen/admin_order_details.dart';
 import 'package:e_commerce_app/admin/views/widgets/appbar_widget.dart';
 import 'package:e_commerce_app/admin/views/widgets/normal_text.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart' as intl;
 
 class AdminOrderScreen extends StatelessWidget {
@@ -19,7 +21,9 @@ class AdminOrderScreen extends StatelessWidget {
             children: List.generate(
                 20,
                 (index) => ListTile(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(() => const AdminOrderDetails());
+                      },
                       tileColor: textfieldGrey,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(12)),

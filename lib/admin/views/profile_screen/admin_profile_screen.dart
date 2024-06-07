@@ -1,5 +1,7 @@
 import 'package:e_commerce_app/admin/const/const.dart';
+import 'package:e_commerce_app/admin/views/message_screen/admin_message_screen.dart';
 import 'package:e_commerce_app/admin/views/profile_screen/admin_edit_profilescreen.dart';
+import 'package:e_commerce_app/admin/views/shop_screnn/admin_shop_settings_screen.dart';
 import 'package:e_commerce_app/admin/views/widgets/normal_text.dart';
 import 'package:get/get.dart';
 
@@ -42,6 +44,14 @@ class AdminProfileScreen extends StatelessWidget {
               children: List.generate(
                   profileButtonTitles.length,
                   (index) => ListTile(
+                        onTap: () {
+                          switch (index) {
+                            case 0:
+                              Get.to(() => const AdminShopSettings());
+                            case 1:
+                              Get.to(() => const AdminMessageScreen());
+                          }
+                        },
                         leading: Icon(
                           profileButtonIcons[index],
                           color: whiteColor,
