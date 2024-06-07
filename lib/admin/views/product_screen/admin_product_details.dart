@@ -3,7 +3,9 @@ import 'package:e_commerce_app/admin/views/widgets/normal_text.dart';
 import 'package:get/get.dart';
 
 class AdminProductDetails extends StatelessWidget {
-  const AdminProductDetails({super.key});
+  final dynamic data;
+
+  const AdminProductDetails({super.key, this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class AdminProductDetails extends StatelessWidget {
               Icons.arrow_back,
               color: darkFontGrey,
             )),
-        title: boldText(text: "Order Details", size: 16.0),
+        title: boldText(text: "${data['p_name']}", size: 16.0),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -28,13 +30,12 @@ class AdminProductDetails extends StatelessWidget {
             VxSwiper.builder(
                 autoPlay: true,
                 height: 350,
-                itemCount: 3,
+                itemCount: data['p_imgs'].length,
                 aspectRatio: 16 / 9,
                 viewportFraction: 1.0,
                 itemBuilder: (context, index) {
-                  return Image.asset(
-                    imgProduct,
-                    //data["p_imgs"][index],
+                  return Image.network(
+                    data["p_imgs"][index],
                     width: double.infinity,
                     fit: BoxFit.cover,
                   );
@@ -47,22 +48,27 @@ class AdminProductDetails extends StatelessWidget {
                 children: [
                   10.heightBox,
                   //title!.text.size(16).color(darkFontGrey).fontFamily(semibold).make(),
-                  boldText(text: "Product title", color: fontGrey, size: 16.0),
+                  boldText(
+                      text: "${data['p_name']}", color: fontGrey, size: 16.0),
 
                   10.heightBox,
                   Row(
                     children: [
-                      boldText(text: "Category", color: fontGrey, size: 16.0),
+                      boldText(
+                          text: "${data['p_category']}",
+                          color: fontGrey,
+                          size: 16.0),
                       10.widthBox,
                       boldText(
-                          text: "Subcategory", color: fontGrey, size: 16.0),
+                          text: "${data['p_subcategory']}",
+                          color: fontGrey,
+                          size: 16.0),
                     ],
                   ),
                   10.heightBox,
                   VxRating(
                     isSelectable: false,
-                    // value: double.parse(data['p_rating']),
-                    value: 3.0,
+                    value: double.parse(data['p_rating']),
                     onRatingUpdate: (value) {},
                     normalColor: textfieldGrey,
                     selectionColor: golden,
@@ -75,7 +81,8 @@ class AdminProductDetails extends StatelessWidget {
             ),
             10.heightBox,
             //"Rs.${data['p_price']}".text.color(redColor).fontFamily(bold).size(18).make(),
-            boldText(text: "Rs.4000.00", color: redColor, size: 16.0),
+            boldText(
+                text: "Rs.${data['p_price']}", color: redColor, size: 16.0),
             10.heightBox,
             //Color section
             20.heightBox,
@@ -85,8 +92,7 @@ class AdminProductDetails extends StatelessWidget {
                   children: [
                     SizedBox(
                       width: 100,
-                      child: boldText(text: "Colour", color: fontGrey),
-                      //child: "Colors".text.color(textfieldGrey).make(),
+                      child: "Colors".text.color(textfieldGrey).make(),
                     ),
                     Row(
                       children: List.generate(
@@ -115,7 +121,7 @@ class AdminProductDetails extends StatelessWidget {
                       child: boldText(text: "Quantity", color: fontGrey),
                     ),
                     normalText(
-                      text: "20 items",
+                      text: "${data['p_quantity']}",
                       color: fontGrey,
                     )
                   ],
@@ -126,7 +132,7 @@ class AdminProductDetails extends StatelessWidget {
             20.heightBox,
             boldText(text: "Description", color: fontGrey),
             10.heightBox,
-            normalText(text: "Description of this item", color: fontGrey),
+            normalText(text: "${data['p_desc']}", color: fontGrey),
 
             //button section
             10.heightBox,

@@ -10,3 +10,4 @@ const icShopSettings = "assets/icons/admin/phone_setting.png";
 const icStar = "assets/icons/admin/star.png";
 const icVerify = "assets/icons/admin/verify.png";
 const imgProduct = "assets/icons/admin/product.jpg";
+const admin = "assets/icons/admin/admin.jpg";

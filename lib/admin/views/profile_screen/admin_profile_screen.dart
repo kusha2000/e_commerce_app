@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/admin/const/const.dart';
+import 'package:e_commerce_app/admin/views/auth_screen/login_screen_admin.dart';
 import 'package:e_commerce_app/admin/views/message_screen/admin_message_screen.dart';
 import 'package:e_commerce_app/admin/views/profile_screen/admin_edit_profilescreen.dart';
 import 'package:e_commerce_app/admin/views/shop_screnn/admin_shop_settings_screen.dart';
@@ -15,26 +16,29 @@ class AdminProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: boldText(text: settings, size: 16.0),
         actions: [
-          IconButton(
-            onPressed: () {
-              Get.to(() => const AdminEditProfileScreen());
-            },
-            icon: const Icon(Icons.edit),
-            color: whiteColor,
-          ),
-          TextButton(onPressed: () {}, child: normalText(text: logout))
+          //This can use when we use same databsase users for admin and normal users
+
+          // IconButton(
+          //   onPressed: () {
+          //     Get.to(() => const AdminEditProfileScreen());
+          //   },
+          //   icon: const Icon(Icons.edit),
+          //   color: whiteColor,
+          // ),
+          TextButton(
+              onPressed: () {
+                Get.offAll(() => const LoginScreenAdmin());
+              },
+              child: normalText(text: logout))
         ],
       ),
       body: Column(
         children: [
           ListTile(
-            leading: Image.asset(imgProduct)
-                .box
-                .roundedFull
-                .clip(Clip.antiAlias)
-                .make(),
-            title: boldText(text: "vendor name"),
-            subtitle: normalText(text: "vendoremail@eshop.lk"),
+            leading:
+                Image.asset(admin).box.roundedFull.clip(Clip.antiAlias).make(),
+            title: boldText(text: "Admin"),
+            subtitle: normalText(text: "admin@gmail.com"),
           ),
           Divider(),
           10.heightBox,
