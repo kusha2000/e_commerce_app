@@ -40,7 +40,7 @@ class PaymentMethod extends StatelessWidget {
                     VxToast.show(context, msg: "Order Placed successfully");
                     Get.offAll(const Home());
                   },
-                  color: redColor,
+                  color: blueColor,
                   textColor: whiteColor,
                   title: "Place my order",
                 ),
@@ -60,7 +60,7 @@ class PaymentMethod extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
                             color: controller.paymentIndex.value == index
-                                ? redColor
+                                ? blueColor
                                 : Colors.transparent,
                             width: 4)),
                     margin: const EdgeInsets.only(bottom: 8),

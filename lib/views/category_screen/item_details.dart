@@ -48,7 +48,7 @@ class ItemDetails extends StatelessWidget {
                 },
                 icon: Icon(
                   Icons.favorite_outlined,
-                  color: controller.isFav.value ? redColor : darkFontGrey,
+                  color: controller.isFav.value ? blueColor : darkFontGrey,
                 ),
               ),
             ),
@@ -99,7 +99,7 @@ class ItemDetails extends StatelessWidget {
                       10.heightBox,
                       "Rs.${data['p_price']}"
                           .text
-                          .color(redColor)
+                          .color(blueColor)
                           .fontFamily(bold)
                           .size(18)
                           .make(),
@@ -239,7 +239,7 @@ class ItemDetails extends StatelessWidget {
                                 ),
                                 "Rs.${controller.totalPrice.value}"
                                     .text
-                                    .color(redColor)
+                                    .color(blueColor)
                                     .size(16)
                                     .fontFamily(bold)
                                     .make(),
@@ -309,7 +309,7 @@ class ItemDetails extends StatelessWidget {
                                       10.heightBox,
                                       "Rs.60000"
                                           .text
-                                          .color(redColor)
+                                          .color(blueColor)
                                           .fontFamily(bold)
                                           .size(16)
                                           .make(),
@@ -333,7 +333,7 @@ class ItemDetails extends StatelessWidget {
               width: double.infinity,
               height: 60,
               child: ourButton(
-                  color: redColor,
+                  color: blueColor,
                   onPress: () {
                     if (controller.quantity.value > 0) {
                       controller.addToCart(

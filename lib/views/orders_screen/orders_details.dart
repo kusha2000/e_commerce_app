@@ -25,7 +25,7 @@ class OrdersDetails extends StatelessWidget {
           child: Column(
             children: [
               orderStatus(
-                  color: redColor,
+                  color: blueColor,
                   icon: Icons.done,
                   title: "Placed",
                   showDone: data['order_placed']),
@@ -100,7 +100,7 @@ class OrdersDetails extends StatelessWidget {
                               "Total Amount".text.fontFamily(semibold).make(),
                               "Rs.${data['total_amount']}.00"
                                   .text
-                                  .color(redColor)
+                                  .color(blueColor)
                                   .fontFamily(bold)
                                   .make(),
                             ],

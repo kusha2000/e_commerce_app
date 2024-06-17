@@ -17,7 +17,7 @@ class CartScreen extends StatelessWidget {
         bottomNavigationBar: SizedBox(
             height: 60,
             child: ourButton(
-                color: redColor,
+                color: blueColor,
                 onPress: () {
                   Get.to(() => const ShippingDetails());
                 },
@@ -68,12 +68,12 @@ class CartScreen extends StatelessWidget {
                                 subtitle: "Rs.${data[index]['tprice']}.00"
                                     .text
                                     .fontFamily(semibold)
-                                    .color(redColor)
+                                    .color(blueColor)
                                     .size(16)
                                     .make(),
                                 trailing: const Icon(
                                   Icons.delete,
-                                  color: redColor,
+                                  color: blueColor,
                                 ).onTap(() {
                                   FirestoreServices.deleteDocument(
                                       data[index].id);
@@ -95,7 +95,7 @@ class CartScreen extends StatelessWidget {
                             () => "Rs.${controller.totalP.value}.00"
                                 .text
                                 .fontFamily(semibold)
-                                .color(redColor)
+                                .color(blueColor)
                                 .make(),
                           ),
                         ],

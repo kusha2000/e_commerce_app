@@ -6,5 +6,6 @@ const Color darkFontGrey = Color.fromRGBO(62, 68, 71, 1);
 const Color whiteColor = Color.fromRGBO(255, 255, 255, 1);
 const Color lightGrey = Color.fromRGBO(239, 239, 239, 1);
 const Color redColor = Color.fromRGBO(230, 46, 4, 1);
+const Color blueColor = Color(0xFF050C9C);
 const Color golden = Color.fromRGBO(255, 168, 0, 1);
 const Color lightGolden = Color(0xffFEEAD1);

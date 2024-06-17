@@ -51,12 +51,12 @@ class WishlistScreen extends StatelessWidget {
                             subtitle: "Rs.${data[index]['p_price']}.00"
                                 .text
                                 .fontFamily(semibold)
-                                .color(redColor)
+                                .color(blueColor)
                                 .size(16)
                                 .make(),
                             trailing: const Icon(
                               Icons.favorite,
-                              color: redColor,
+                              color: blueColor,
                             ).onTap(() {
                               firestore
                                   .collection(productsCollection)

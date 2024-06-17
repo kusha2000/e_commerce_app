@@ -78,7 +78,7 @@ class ChatScreen extends StatelessWidget {
                     controller.sendMsg(controller.msgController.text);
                     controller.msgController.clear();
                   },
-                  icon: const Icon(Icons.send, color: redColor),
+                  icon: const Icon(Icons.send, color: blueColor),
                 ),
               ],
             )

@@ -48,10 +48,10 @@ class LoginScreen extends StatelessWidget {
                   // ourButton().box.width(context.screenWidth - 50).make(),
                   controller.isloading.value
                       ? const CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation(redColor),
+                          valueColor: AlwaysStoppedAnimation(blueColor),
                         )
                       : ourButton(
-                          color: redColor,
+                          color: blueColor,
                           title: login,
                           textColor: whiteColor,
                           onPress: () async {
@@ -74,7 +74,7 @@ class LoginScreen extends StatelessWidget {
                   ourButton(
                       color: lightGolden,
                       title: signup,
-                      textColor: redColor,
+                      textColor: blueColor,
                       onPress: () {
                         Get.to(() => const SignupScreen());
                       }).box.width(context.screenWidth - 50).make(),

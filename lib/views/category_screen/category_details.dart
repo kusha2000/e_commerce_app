@@ -124,7 +124,7 @@ class _CategotyDetailsState extends State<CategotyDetails> {
                                           10.heightBox,
                                           "Rs.${data[index]['p_price']}"
                                               .text
-                                              .color(redColor)
+                                              .color(blueColor)
                                               .fontFamily(bold)
                                               .size(16)
                                               .make(),

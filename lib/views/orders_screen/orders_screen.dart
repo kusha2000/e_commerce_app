@@ -44,7 +44,7 @@ class OrdersScreen extends StatelessWidget {
                         title: data[index]['order_code']
                             .toString()
                             .text
-                            .color(redColor)
+                            .color(blueColor)
                             .fontFamily(semibold)
                             .make(),
                         subtitle: data[index]['total_amount']

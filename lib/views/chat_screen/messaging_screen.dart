@@ -51,7 +51,7 @@ class MessagesScreen extends StatelessWidget {
                                         ]);
                                   },
                                   leading: const CircleAvatar(
-                                    backgroundColor: redColor,
+                                    backgroundColor: blueColor,
                                     child: Icon(
                                       Icons.person,
                                       color: whiteColor,

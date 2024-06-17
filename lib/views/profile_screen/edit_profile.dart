@@ -44,7 +44,7 @@ class EditProfileScreen extends StatelessWidget {
                         ).box.roundedFull.clip(Clip.antiAlias).make(),
               10.heightBox,
               ourButton(
-                  color: redColor,
+                  color: blueColor,
                   onPress: () {
                     controller.changeImage(context);
                   },
@@ -70,12 +70,12 @@ class EditProfileScreen extends StatelessWidget {
               20.heightBox,
               controller.isloading.value
                   ? const CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation(redColor),
+                      valueColor: AlwaysStoppedAnimation(blueColor),
                     )
                   : SizedBox(
                       width: context.screenWidth - 60,
                       child: ourButton(
-                          color: redColor,
+                          color: blueColor,
                           onPress: () async {
                             controller.isloading(true);
 

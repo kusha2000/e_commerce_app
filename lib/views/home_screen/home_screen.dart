@@ -174,7 +174,7 @@ class HomeScreen extends StatelessWidget {
                       padding: const EdgeInsets.all(12),
                       width: double.infinity,
                       decoration: const BoxDecoration(
-                        color: redColor,
+                        color: blueColor,
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -224,7 +224,7 @@ class HomeScreen extends StatelessWidget {
                                                   10.heightBox,
                                                   "Rs.${featuredData[index]['p_price']}.00"
                                                       .text
-                                                      .color(redColor)
+                                                      .color(blueColor)
                                                       .fontFamily(bold)
                                                       .size(16)
                                                       .make(),
@@ -326,7 +326,7 @@ class HomeScreen extends StatelessWidget {
                                       10.heightBox,
                                       "${allproductsdata[index]['p_price']}"
                                           .text
-                                          .color(redColor)
+                                          .color(blueColor)
                                           .fontFamily(bold)
                                           .size(16)
                                           .make(),

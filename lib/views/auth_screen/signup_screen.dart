@@ -69,7 +69,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   Row(
                     children: [
                       Checkbox(
-                        checkColor: redColor,
+                        checkColor: blueColor,
                         value: ischecked,
                         onChanged: (newValue) {
                           setState(() {
@@ -92,7 +92,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               text: termAndCond,
                               style: TextStyle(
                                 fontFamily: regular,
-                                color: redColor,
+                                color: blueColor,
                               ),
                             ),
                             TextSpan(
@@ -106,7 +106,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               text: privacyPolicy,
                               style: TextStyle(
                                 fontFamily: regular,
-                                color: redColor,
+                                color: blueColor,
                               ),
                             ),
                           ]),
@@ -116,10 +116,10 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   controller.isloading.value
                       ? const CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation(redColor),
+                          valueColor: AlwaysStoppedAnimation(blueColor),
                         )
                       : ourButton(
-                          color: ischecked == true ? redColor : lightGrey,
+                          color: ischecked == true ? blueColor : lightGrey,
                           title: signup,
                           textColor: whiteColor,
                           onPress: () async {
@@ -167,7 +167,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         text: login,
                         style: TextStyle(
                           fontFamily: bold,
-                          color: redColor,
+                          color: blueColor,
                         ),
                       ),
                     ]),

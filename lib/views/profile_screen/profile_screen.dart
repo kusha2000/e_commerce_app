@@ -30,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
                 if (!snapshot.hasData) {
                   return const Center(
                       child: CircularProgressIndicator(
-                    valueColor: AlwaysStoppedAnimation(redColor),
+                    valueColor: AlwaysStoppedAnimation(blueColor),
                   ));
                 } else {
                   var data = snapshot.data!.docs[0];
@@ -178,7 +178,7 @@ class ProfileScreen extends StatelessWidget {
                             .shadowSm
                             .make()
                             .box
-                            .color(redColor)
+                            .color(blueColor)
                             .make(),
                       ],
                     ),

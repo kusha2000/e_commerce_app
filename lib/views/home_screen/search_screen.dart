@@ -62,7 +62,7 @@ class SearchScreen extends StatelessWidget {
                             10.heightBox,
                             "${filtered[index]['p_price']}"
                                 .text
-                                .color(redColor)
+                                .color(blueColor)
                                 .fontFamily(bold)
                                 .size(16)
                                 .make(),
