@@ -2,30 +2,36 @@
  
 A robust eCommerce application built with Flutter that offers a seamless shopping experience for users and comprehensive management tools for administrators.
 
+<h3><u>Technologies Used</u></h3>
+<ul>
+🔹 Flutter<br>
+🔹 Firebase<br>
+</ul>
 <h3>Features</h3>
 
-User Capabilities
+<h4>User Capabilities</h4>
 
 <ul>
-<li>Authentication: Register and login securely.</li>
-<li>Product Browsing: View featured products and explore all products available in the app.</li>
-<li>Category Filtering: Browse products based on selected categories.</li>
-<li>Product Details: Access detailed information about each product.</li>
-<li>Cart Management: Add products to the cart and manage them.</li>
-<li>Wishlist: Add items to a wishlist for future reference.</li>
-<li>Chat: Communicate directly with product owners.</li>
+✅ Authentication: Register and login securely.<br>
+✅ Product Browsing: View featured products and explore all products available in the app.<br>
+✅ Category Filtering: Browse products based on selected categories.<br>
+✅ Product Details: Access detailed information about each product.<br>
+✅ Cart Management: Add products to the cart and manage them.<br>
+✅ Wishlist: Add items to a wishlist for future reference.<br>
+✅ Chat: Communicate directly with product owners.<br>
  </ul>
-Admin Capabilities<br><br>
+<h4>Admin Capabilities</h4>
 
 <ul>
-<li>CRUD Operations: Create, read, update, and delete products and user accounts.</li>
-<li>User Interaction: View and manage chats with users.</li>
+✅ CRUD Operations: Create, read, update, and delete products and user accounts.<br>
+✅ User Interaction: View and manage chats with users.<br>
 </ul>
 <h2>This is the Full Demo of the project</h2><br><br>
 
-<img src="https://github.com/kusha2000/e_commerce_app/assets/127003267/58c88779-d8cd-4e4e-a9a3-a974f2a091ee" width="300" height="400">
-<img src="https://github.com/kusha2000/e_commerce_app/assets/127003267/200e6168-5996-4acc-823b-17d91796a861" width="300" height="400">
-<br><br>
+
+
+https://github.com/user-attachments/assets/7c9d73af-2fdf-41b2-a474-fc228f8c3878
+
 
 
 
